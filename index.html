@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Quality Classification with Machine Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar: Model Setting -->
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <h2 class="sidebar-title">Model Setting</h2>
+                
+                <div class="setting-group">
+                    <label class="setting-label">Architecture</label>
+                    <select class="setting-dropdown" id="architecture">
+                        <option value="resnet50">ResNet50</option>
+                        <option value="vgg16">VGG16</option>
+                        <option value="inception">InceptionV3</option>
+                        <option value="efficientnet">EfficientNet</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label class="setting-label">Device</label>
+                    <select class="setting-dropdown" id="device">
+                        <option value="cpu">CPU</option>
+                        <option value="gpu">GPU</option>
+                        <option value="tpu">TPU</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Top Section: Drug Quality Classification -->
+            <div class="classification-section">
+                <div class="classification-header">
+                    <h1 class="main-title">Drug Quality Classification with Machine Learning</h1>
+                </div>
+                
+                <div class="input-card">
+                    <div class="input-group">
+                        <label class="input-label">Generic_Name</label>
+                        <input type="text" class="generic-input" id="genericName" placeholder="Enter drug generic name...">
+                        <button class="prediction-btn" id="predictBtn">
+                            <i class="fas fa-pills"></i>
+                            Prediction
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="pill-illustration">
+                    <div class="pill-capsule">
+                        <div class="pill-top">
+                            <div class="particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div class="pill-bottom"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Prediction Output -->
+            <div class="prediction-section">
+                <div class="prediction-header">
+                    <h2 class="prediction-title">Prediction</h2>
+                    <i class="fas fa-crystal-ball prediction-icon"></i>
+                </div>
+                
+                <div class="prediction-content">
+                    <div class="prediction-icon-large">
+                        <div class="icon-background">
+                            <span class="icon-letter">a</span>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-fields">
+                        <div class="field-group">
+                            <label class="field-label">Generic_Name</label>
+                            <div class="field-output" id="outputGenericName">-</div>
+                        </div>
+                        
+                        <div class="field-group">
+                            <label class="field-label">Medicine</label>
+                            <div class="field-output" id="outputMedicine">-</div>
+                        </div>
+                        
+                        <div class="field-group">
+                            <label class="field-label">Usage Category</label>
+                            <div class="field-output" id="outputCategory">-</div>
+                        </div>
+                        
+                        <div class="field-group">
+                            <label class="field-label">Accuracy</label>
+                            <div class="field-output" id="outputAccuracy">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
